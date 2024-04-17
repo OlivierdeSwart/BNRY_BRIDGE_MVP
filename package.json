@@ -1,0 +1,55 @@
+{
+  "name": "cryptocurrency_from_scratch",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bignumber.js": "^7.2.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2",
+    "dotenv": "^16.0.0",
+    "find-parent-dir": "^0.3.0",
+    "openzeppelin-solidity": "1.12.0",
+    "rlp": "^2.1.0",
+    "solc": "^0.4.24",
+    "solhint": "^1.2.1",
+    "solidity-coverage": "^0.8.1",
+    "truffle": "^4.1.13",
+    "web3": "^1.0.0-beta.35",
+    "yargs": "^12.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "2.0.2",
+    "@nomiclabs/hardhat-ethers": "2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "4.3.6",
+    "ethers": "5.5.4",
+    "hardhat": "2.15.0",
+    "hardhat-etherscan-abi": "^0.3.0"
+  }
+}
