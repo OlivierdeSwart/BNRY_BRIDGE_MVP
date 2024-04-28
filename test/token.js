@@ -5,7 +5,7 @@ const { shouldBehaveLikeMintableToken } = require("./MintableToken.behaviour.js"
 const { shouldBehaveLikePausableToken } = require("./PausableToken.behaviour.js")
 const { shouldBehaveLikeBurnableToken } = require("./BurnableToken.behaviour.js")
 
-const Token = artifacts.require("./token/WBTC.sol");
+const Token = artifacts.require("./token/WBNRY.sol");
 
 contract('shouldBehaveLikeDetailedERC20', function (accounts) {
     const initialBalance = 100;

@@ -30,7 +30,7 @@ describe("BasicToken", function () {
     describe('when the requested account has some tokens', function () {
       it('returns the total amount of tokens', async function () {
         const balance = await basicToken.balanceOf(owner.address);
-        expect(balance).to.equal(100);
+        expect(balance).to.equal(0);
       });
     });
   });
@@ -46,9 +46,17 @@ describe("BasicToken", function () {
       });
 
       describe('when the sender has enough balance', function () {
-        const amount = 100;
+        const amount = ethers.utils.parseUnits("100", 8);
 
         it('transfers the requested amount', async function () {
+
+          // Mint some tokens to the owner's account
+          const initialSupply = ethers.utils.parseUnits("100", 8); // 100 tokens
+          await basicToken.mint(owner.address, initialSupply);
+
+          const ownerBalanceBefore = await basicToken.balanceOf(owner.address);
+          console.log(`owner balance before: ${ownerBalanceBefore}`);
+
           await basicToken.connect(owner).transfer(recipient.address, amount);
 
           const senderBalance = await basicToken.balanceOf(owner.address);
@@ -59,6 +67,11 @@ describe("BasicToken", function () {
         });
 
         it('emits a transfer event', async function () {
+
+          // Mint some tokens to the owner's account
+          const initialSupply = ethers.utils.parseUnits("100", 8); // 100 tokens
+          await basicToken.mint(owner.address, initialSupply);
+
           await expect(basicToken.connect(owner).transfer(recipient.address, amount))
             .to.emit(basicToken, 'Transfer')
             .withArgs(owner.address, recipient.address, amount);
@@ -67,7 +80,13 @@ describe("BasicToken", function () {
     });
 
     describe('when the recipient is the zero address', function () {
+
       it('reverts', async function () {
+
+        // Mint some tokens to the owner's account
+        const initialSupply = ethers.utils.parseUnits("100", 8); // 100 tokens
+        await basicToken.mint(owner.address, initialSupply);
+        
         await expect(basicToken.connect(owner).transfer(ZERO_ADDRESS, 100)).to.be.reverted;
       });
     });

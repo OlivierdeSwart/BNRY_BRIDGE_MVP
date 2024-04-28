@@ -17,11 +17,17 @@ module.exports = {
       chainId: 97,
       accounts: privateKeys.split(","),
       gasPrice: 20000000000
+    },
+    mainnet: {
+      url: "https://bsc-dataseed.bnbchain.org/",
+      chainId: 56,
+      gasPrice: 20000000000,
+      accounts: privateKeys.split(",")
     }
   },
   etherscan: {
     apiKey: {
-      bscTestnet: process.env.BSCSCAN_API_KEY
+      bsc: process.env.BSCSCAN_API_KEY
     }
   }
 };

@@ -5,7 +5,7 @@ async function main() {
   
     console.log("Account balance:", (await deployer.getBalance()).toString());
   
-    const Token = await ethers.getContractFactory("WBNRY"); //Replace with name of your smart contract
+    const Token = await ethers.getContractFactory("WBNRY");
     const token = await Token.deploy();
   
     console.log("Token address:", token.address);
