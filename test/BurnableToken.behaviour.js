@@ -7,7 +7,7 @@ describe("BurnableToken behavior", function () {
   let token;
   let owner, anotherAccount;
   let from;
-  const initialBalance = ethers.utils.parseUnits("1000", 18); // Adjusting the decimal based on your token setup
+  const initialBalance = ethers.utils.parseUnits("1000", 8); // Adjusting the decimal based on your token setup
   const amount = BigNumber.from(100);
 
   // beforeEach(async function () {
